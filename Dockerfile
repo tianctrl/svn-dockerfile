@@ -15,5 +15,5 @@ ADD authz /home/svn/$SVN_REPONAME/conf/authz
 
 VOLUME /home/svn
 
-CMD ["-d","-r","/home/svn"]
-ENTRYPOINT ["/usr/bin/svnserve"]
+ADD svn.sh /
+ENTRYPOINT /svn.sh
