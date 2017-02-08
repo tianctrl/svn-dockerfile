@@ -16,6 +16,7 @@ RUN mkdir /home/svn
 RUN svnadmin create /home/svn/$SVN_REPONAME
 ADD svnserve.conf /home/svn/$SVN_REPONAME/conf/svnserve.conf
 ADD passwd /home/svn/$SVN_REPONAME/conf/passwd
+ADD authz /home/svn/$SVN_REPONAME/conf/authz
 
 VOLUME /home/svn
 
