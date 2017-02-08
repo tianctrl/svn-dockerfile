@@ -13,4 +13,4 @@ RUN svnadmin create /home/svn/$SVN_REPONAME
 
 VOLUME /home/svn
 
-ENTRYPOINT /usr/bin/svnserve -d -r /home/svn
+CMD [ "/usr/bin/svnserve", "--daemon", "--foreground", "--root", "/home/svn" ]
