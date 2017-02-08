@@ -15,6 +15,7 @@ RUN chmod u+x /svn/run
 RUN mkdir /home/svn
 RUN svnadmin create /home/svn/$SVN_REPONAME
 ADD svnserve.conf /home/svn/$SVN_REPONAME/conf/svnserve.conf
+ADD passwd /home/svn/$SVN_REPONAME/conf/passwd
 
 VOLUME /home/svn
 
