@@ -1,6 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: svn
+  labels:
+    app: svn-deployment
+  name: svn-deployment
 spec:
-  
+  replicas: 1
+  selector:
+    matchLabels:
+      app: svn-deployment
+  template:
+    metadata:
+      labels:
+        app: svn-deployment
+    spec:
+      containers:
+      - name: svn-deployment
+        image: tianctrl/svn-dockerfile
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3690
+        stdin: true
+        tty: true
