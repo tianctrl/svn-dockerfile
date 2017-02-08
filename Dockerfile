@@ -13,4 +13,4 @@ ADD svnserve.conf /home/svn/$SVN_REPONAME/conf/svnserve.conf
 
 VOLUME /home/svn
 
-ENTRYPOINT ["/usr/bin/svnserve", "-d", "-r", "/home/svn"]
+ENTRYPOINT svnserve -d -r /home/svn
