@@ -9,8 +9,8 @@ EXPOSE 3690
 
 RUN mkdir /home/svn
 RUN svnadmin create /home/svn/$SVN_REPONAME
-ADD svnserve.conf /home/svn/$SVN_REPONAME/conf/svnserve.conf
+# ADD svnserve.conf /home/svn/$SVN_REPONAME/conf/svnserve.conf
 
 VOLUME /home/svn
 
-ENTRYPOINT svnserve -d -r /home/svn
+ENTRYPOINT /usr/bin/svnserve -d -r /home/svn
