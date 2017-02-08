@@ -20,4 +20,5 @@ ADD authz /home/svn/$SVN_REPONAME/conf/authz
 
 VOLUME /home/svn
 
-CMD ["/svn/run"]
+# CMD ["/svn/run"]
+CMD /usr/bin/svnserve -d -r /home/svn && tail -f /var/log/dpkg.log

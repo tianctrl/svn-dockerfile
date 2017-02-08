@@ -20,5 +20,3 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 3690
-        stdin: true
-        tty: true
