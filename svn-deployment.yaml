@@ -11,9 +11,16 @@ spec:
       labels:
         app: svn-deployment
     spec:
+      volumes:
+      - name: svn-data
+        hostPath:
+          path: /home/svn
       containers:
       - name: svn-deployment
-        image: tianctrl/svn-docker:1.0
+        image: tianctrl/svn-docker:2.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3690
+        volumeMounts:
+        - mountPath: /var/svn
+          name: svn-data

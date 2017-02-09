@@ -1,6 +1,11 @@
 FROM phusion/baseimage:0.9.19
 MAINTAINER tianh
 
+ENV HOME /root
+
+# Disable SSH
+RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
+
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
@@ -24,9 +29,6 @@ RUN chmod u+x /etc/service/svn/run
 
 RUN mkdir -p /var/svn
 RUN svnadmin create /var/svn/$SVN_REPONAME
-ADD svnserve.conf /var/svn/$SVN_REPONAME/conf/svnserve.conf
-ADD passwd /var/svn/$SVN_REPONAME/conf/passwd
-ADD authz /var/svn/$SVN_REPONAME/conf/authz
 
 # To store the data outside the container, mount /svn as a data volume
-VOLUME /svn
+VOLUME /var/svn
