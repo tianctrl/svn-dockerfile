@@ -6,9 +6,6 @@ metadata:
   name: svn-deployment
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: svn-deployment
   template:
     metadata:
       labels:

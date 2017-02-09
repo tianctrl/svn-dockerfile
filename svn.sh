@@ -8,4 +8,4 @@ status () {
 
 status "starting subversion"
 set -x
-exec /usr/bin/svnserve -d --foreground -r /home/svn --log-file=/var/log/svnserve.log
+exec /usr/bin/svnserve -d -r /var/svn
