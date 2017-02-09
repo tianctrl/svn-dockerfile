@@ -29,4 +29,4 @@ ADD passwd /var/svn/$SVN_REPONAME/conf/passwd
 ADD authz /var/svn/$SVN_REPONAME/conf/authz
 
 # To store the data outside the container, mount /svn as a data volume
-VOLUME /var/svn
+VOLUME /svn

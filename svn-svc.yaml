@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: svn
+  name: svn
+spec:
+  type: NodePort
+  ports:
+  - port: 3690
+    targetPort: 3690
+    nodePort: 30006
+  selector:
+    app: svn-deployment
