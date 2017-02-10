@@ -14,7 +14,7 @@ RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ precise universe' >> /etc/apt
 RUN apt-get -y update
 
 # Install subversion
-RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y subversion
+RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y subversion wget
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
